@@ -129,6 +129,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
           ),
           Expanded(
             child: ListView.builder(
+              padding: EdgeInsets.only(top: 10.0, bottom: 15.0),
               itemCount: widget.destination.activities.length,
               itemBuilder: (BuildContext context, int index) {
                 Activity activity = widget.destination.activities[index];
@@ -189,6 +190,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                             Row(
                               children: [
                                 Container(
+                                  padding: EdgeInsets.all(5.0),
                                   width: 70.0,
                                   decoration: BoxDecoration(
                                     color: Theme.of(context).accentColor,
@@ -201,6 +203,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                   width: 5.0,
                                 ),
                                 Container(
+                                  padding: EdgeInsets.all(5.0),
                                   width: 70.0,
                                   decoration: BoxDecoration(
                                     color: Theme.of(context).accentColor,
@@ -212,6 +215,19 @@ class _DestinationScreenState extends State<DestinationScreen> {
                               ],
                             )
                           ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20.0,
+                      top: 15.0,
+                      bottom: 15.0,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image(
+                          width: 110.0,
+                          image: AssetImage(activity.imageUrl),
+                          fit: BoxFit.cover,
                         ),
                       ),
                     )
